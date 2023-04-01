@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "userId": "1",
+      "displayname": "Fred",
+      "birthday": "02-20",
+      "profilePicSrc": ""
+      // "profilePicSrc": "/static/photos/099892.jpg"
+    },
+    {
+      "userId": "2",
+      "displayname": "Ben",
+      "birthday": "01-01",
+      "profilePicSrc": ""
+      // "profilePicSrc": "/static/photos/099913.jpg"
+    },
+    {
+      "userId": "3",
+      "displayname": "Sarah",
+      "birthday": "10-13",
+      "profilePicSrc": ""
+    },
+    {
+      "userId": "4",
+      "displayname": "Mina",
+      "birthday": "08-20",
+      "profilePicSrc": ""
+    },
+    {
+      "userId": "5",
+      "displayname": "Oliver",
+      "birthday": "04-23",
+      "profilePicSrc": ""
+    }
+  ]
+}
