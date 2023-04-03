@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Card from "../components/Card";
 
 function Main() {
   return (
-    <div>Main</div>
-  )
+    <div>
+      Main
+      <div>
+        <Card />
+      </div>
+    </div>
+  );
 }
 
-export default Main
+export default Main;
