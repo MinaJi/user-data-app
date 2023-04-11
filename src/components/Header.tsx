@@ -21,6 +21,24 @@ const TitleDiv = styled.div`
   cursor: pointer;
 `;
 
+const Menu = styled.div`
+  display: flex;
+  height: 60px;
+  align-items: center;
+`;
+
+const MenuItem = styled.div`
+  width: max-content;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 25px;
+  color: #535353;
+  cursor: pointer;
+  :hover {
+    color: #131313;
+  }
+`;
+
 const ButtonDiv = styled.div`
   margin-right: 30px;
   padding: 8px;
@@ -48,9 +66,14 @@ function Header() {
 
   return (
     <Wrapper>
-      <TitleDiv onClick={() => navi("/")}>
-        <p>회원정보</p>
-      </TitleDiv>
+      <Menu>
+        <TitleDiv onClick={() => navi("/")}>
+          <p>회원정보</p>
+        </TitleDiv>
+        <MenuItem onClick={() => navi("/user-data")}>
+          <p>회원 상세 보기</p>
+        </MenuItem>
+      </Menu>
       <ButtonDiv onClick={() => navi("/add")}>
         <div className="wrapper">
           <div className="icon">

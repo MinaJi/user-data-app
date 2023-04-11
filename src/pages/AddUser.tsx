@@ -25,16 +25,36 @@ const Card = styled.div`
 `;
 
 function AddUser() {
+  // const state = useUserState();
+  // const dispatch = useUserDispatch();
+
+  const addNewUser = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <Layout>
       <Card>
         <p>유저를 등록하세요</p>
-        <form>
+        <form onSubmit={addNewUser}>
           <div className="avatar">
-            <p>아이콘</p>
+            <p>여기에 아이콘</p>
           </div>
-          <label htmlFor="display-name">이름</label>
-          <input id="display-name" />
+          <div>
+            <label htmlFor="user-displayname">이름</label>
+            <input id="display-name" />
+          </div>
+          <div>
+            <label htmlFor="user-mbti">mbti</label>
+            <input id="user-mbti" />
+          </div>
+          <div>
+            <label htmlFor="user-bio">자기소개</label>
+            <input id="user-bio" />
+          </div>
+          <div>
+            <button type="submit">등록하기</button>
+          </div>
         </form>
       </Card>
     </Layout>
