@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import { useUserDispatch, useUserState } from "../context/UserContext";
+import { ActionCreator } from "../context/UserReducers";
 
 const Layout = styled.div`
   margin: 30px;
@@ -25,11 +27,23 @@ const Card = styled.div`
 `;
 
 function AddUser() {
-  // const state = useUserState();
-  // const dispatch = useUserDispatch();
+  const state = useUserState();
+  const dispatch = useUserDispatch();
+  let nextId = useRef(3);
+
+  console.log(state);
 
   const addNewUser = (e: React.FormEvent) => {
     e.preventDefault();
+    dispatch({
+      type: "addUser",
+      payload: {
+        userId: (nextId.current += 1),
+        displayName: "www",
+        mbti: "ddd",
+        bio: "ddd",
+      },
+    });
   };
 
   return (
