@@ -11,10 +11,17 @@ export const ActionCreator = {
     userId: number,
     displayName: string,
     mbti: string,
-    bio: string
+    bio: string,
+    profileUrl: string
   ) => ({
     type: USER_DATA_ACTION.ADD,
-    payload: { userId: userId, displayName: displayName, mbti: mbti, bio: bio },
+    payload: {
+      userId: userId,
+      displayName: displayName,
+      mbti: mbti,
+      bio: bio,
+      profileUrl: profileUrl,
+    },
   }),
   deleteUser: (userId: number) => ({
     type: USER_DATA_ACTION.DELETE,
@@ -35,6 +42,7 @@ export const UserReducer = (state: Array<UserDataType>, action: ActionType) => {
           displayName: action.payload.displayName,
           mbti: action.payload.mbti,
           bio: action.payload.bio,
+          profileUrl: action.payload.profileUrl,
         });
       });
     case USER_DATA_ACTION.DELETE:

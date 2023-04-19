@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useUserDispatch, useUserState } from "../context/UserContext";
-import { ActionCreator } from "../context/UserReducers";
 
 const Layout = styled.div`
   margin: 30px;
@@ -27,23 +26,27 @@ const Card = styled.div`
 `;
 
 function AddUser() {
-  const state = useUserState();
   const dispatch = useUserDispatch();
-  let nextId = useRef(3);
-
-  console.log(state);
+  const state = useUserState();
+  const [userId, setUserId] = useState(state[state.length - 1].userId + 1);
+  const [displayName, setDisplayName] = useState("");
+  const [mbti, setMbti] = useState("ISTJ");
+  const [bio, setBio] = useState("");
+  const [profileUrl, setProfileUrl] = useState("");
 
   const addNewUser = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch({
       type: "addUser",
       payload: {
-        userId: (nextId.current += 1),
-        displayName: "www",
-        mbti: "ddd",
-        bio: "ddd",
+        userId: userId,
+        displayName: displayName,
+        mbti: mbti,
+        bio: bio,
+        profileUrl: profileUrl,
       },
     });
+    setUserId(userId + 1);
   };
 
   return (
@@ -56,15 +59,44 @@ function AddUser() {
           </div>
           <div>
             <label htmlFor="user-displayname">이름</label>
-            <input id="display-name" />
+            <input
+              id="display-name"
+              onChange={(e) => setDisplayName(e.target.value)}
+              value={displayName}
+            />
           </div>
           <div>
             <label htmlFor="user-mbti">mbti</label>
-            <input id="user-mbti" />
+            <select
+              id="user-mbti"
+              onChange={(e) => setMbti(e.target.value)}
+              value={mbti}
+            >
+              <option value="ISTJ">ISTJ</option>
+              <option value="ISFJ">ISFJ</option>
+              <option value="INFJ">INFJ</option>
+              <option value="INTJ">INTJ</option>
+              <option value="ISTP">ISTP</option>
+              <option value="ISFP">ISFP</option>
+              <option value="INFP">INFP</option>
+              <option value="INTP">INTP</option>
+              <option value="ESTP">ESTP</option>
+              <option value="ESFP">ESFP</option>
+              <option value="ENFP">ENFP</option>
+              <option value="ENTP">ENTP</option>
+              <option value="ESTJ">ESTJ</option>
+              <option value="ESFJ">ESFJ</option>
+              <option value="ENFJ">ENFJ</option>
+              <option value="ENTJ">ENTJ</option>
+            </select>
           </div>
           <div>
             <label htmlFor="user-bio">자기소개</label>
-            <input id="user-bio" />
+            <input
+              id="user-bio"
+              onChange={(e) => setBio(e.target.value)}
+              value={bio}
+            />
           </div>
           <div>
             <button type="submit">등록하기</button>

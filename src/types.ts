@@ -18,4 +18,5 @@ export interface UserDataType {
   displayName: string;
   mbti: string;
   bio: string;
+  profileUrl: string;
 }
