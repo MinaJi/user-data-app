@@ -18,5 +18,8 @@ export interface UserDataType {
   displayName: string;
   mbti: string;
   bio: string;
+  birthY: number;
+  birthM: number;
+  birthD: number;
   profileUrl: string;
 }

@@ -23,6 +23,9 @@ function CardList() {
           displayName={item.displayName}
           mbti={item.mbti}
           bio={item.bio}
+          birthY={item.birthY}
+          birthM={item.birthM}
+          birthD={item.birthD}
           profileUrl={item.profileUrl}
         />
       ))}

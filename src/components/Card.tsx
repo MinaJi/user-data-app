@@ -20,6 +20,7 @@ const Avatar = styled.div`
   img {
     width: inherit;
     height: inherit;
+    object-fit: cover;
   }
 `;
 
@@ -42,6 +43,9 @@ function Card(props: UserDataType) {
         <div className="display-name">{props.displayName}</div>
         <div>{props.mbti}</div>
         <div>{props.bio}</div>
+        <div>
+          {props.birthY}년 {props.birthM}월 {props.birthD}일
+        </div>
       </CardBox>
     </CardLayout>
   );

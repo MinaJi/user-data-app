@@ -8,6 +8,9 @@ const initialUserData: Array<UserDataType> = [
     displayName: "지민아",
     mbti: "INTP",
     bio: "안녕하세요",
+    birthY: 1997,
+    birthM: 8,
+    birthD: 20,
     profileUrl:
       "https://i.pinimg.com/736x/a8/f1/6c/a8f16ce570dc2d3e51938b319cdc51a4.jpg",
   },
@@ -16,6 +19,9 @@ const initialUserData: Array<UserDataType> = [
     displayName: "김이박",
     mbti: "ENFP",
     bio: "반갑습니다",
+    birthY: 1996,
+    birthM: 10,
+    birthD: 10,
     profileUrl:
       "https://i.pinimg.com/564x/42/51/90/425190385a0e790fd4115c0cf732bf40.jpg",
   },
@@ -24,6 +30,9 @@ const initialUserData: Array<UserDataType> = [
     displayName: "홍길동",
     mbti: "ESFJ",
     bio: "Hi~",
+    birthY: 1998,
+    birthM: 2,
+    birthD: 18,
     profileUrl:
       "https://i.pinimg.com/564x/c1/0c/1d/c10c1d559f2401e5b0fcea25a624d15d.jpg",
   },

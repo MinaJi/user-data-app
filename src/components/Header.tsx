@@ -71,7 +71,7 @@ function Header() {
           <p>회원정보</p>
         </TitleDiv>
         <MenuItem onClick={() => navi("/user-data")}>
-          <p>회원 상세 보기</p>
+          <p>회원 리스트</p>
         </MenuItem>
       </Menu>
       <ButtonDiv onClick={() => navi("/add")}>
